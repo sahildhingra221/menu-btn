@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SS HARDWARE HUB</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="js/preloader.js"></script>
+    <script src="js/menu-btn.js"></script>
+  </head>
+  <body>
+    <div id="load_screen">
+      <div id="loading">
+        Please wait while the document will be loaded.
+      </div>
+      <img src="images/spin.gif" id="gif">
+    </div> 
+    <section class="front-face">
+      <header class="header-front-face">
+        <img src="images/logo.png" class="logo">
+        <div id="barsWrapper">
+          <div id="barsContainer">
+            <div id="bc-first" class="animate"></div>
+            <div id="bc-second" class="animate"></div>
+            <div id="bc-third" class="animate"></div>
+          </div>
+        </div>
+        <aside id="mainAside" class="animate aside-bar">
+          <ul id="menu-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </aside>
+      </header>
+      <h1>Get the Quality Products Only on <span>Lorem Ipsum</span></h1>
+    </section>
+  <!--script of aside menu-->
+    <script>
+      var aside = document.getElementById('mainAside');
+      var asideOn = false
+      
+      document.getElementById('barsWrapper').addEventListener('click', function(){
+          if(asideOn){
+            aside.style.right = '-100%';
+            
+            asideOn = false;
+          }else{
+            aside.style.right = '0';
+            
+            asideOn = true;
+          }
+      });
+    </script>
+  <!--end of aside menu script-->
+    
+  <!--script for menu button-->
+    <script>
+      
+      function _(e){
+        return document.getElementById(e);
+      }
+      
+      var FirstBar = _('bc-first');
+      var SecondBar = _('bc-second');
+      var ThirdBar = _('bc-third');
+      var btn = _('barsWrapper');
+      var menuOn = false;
+
+      btn.addEventListener('click',function(){
+        
+        if(menuOn){
+          FirstBar.style.transform = 'rotate(0deg)';
+          FirstBar.style.top = '0px';
+          SecondBar.style.opacity= 1;
+          ThirdBar.style.transform = 'rotate(0deg)';
+          ThirdBar.style.bottom = '0px';
+          
+          menuOn = false;
+        }else{
+          FirstBar.style.transform = 'rotate(45deg)';
+          FirstBar.style.top = '8px';
+          SecondBar.style.opacity= 0;
+          ThirdBar.style.transform = 'rotate(-45deg)';
+          ThirdBar.style.bottom = '8px';
+          
+          menuOn = true;
+        }
+      });
+    </script>
+  <!--end of menu button script-->
+  <section class="intro"></section>
+  </body>
+</html>
+
